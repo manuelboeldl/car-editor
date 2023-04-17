@@ -1,4 +1,10 @@
 /* CarDetailComponent's private CSS styles */
+h2{
+  text-align: center;
+}
+/* div{
+  text-align: center;
+}
 label {
   color: #435960;
   font-weight: bold;
@@ -22,4 +28,4 @@ button:disabled {
   background-color: #eee;
   color: #ccc;
   cursor: auto;
-}
+} */

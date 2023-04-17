@@ -22,7 +22,7 @@ import { CarSearchComponent } from './car-search/car-search.component';
     CarDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    CarSearchComponent,
+    CarSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +38,12 @@ import { CarSearchComponent } from './car-search/car-search.component';
     )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    CarsComponent,
+    CarDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+    CarSearchComponent]
 })
 export class AppModule { }

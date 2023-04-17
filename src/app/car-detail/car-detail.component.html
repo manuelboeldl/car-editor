@@ -1,13 +1,25 @@
 <div *ngIf="car">
-  
-  <h2>{{car.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{car.id}}</div>
-  <div>
-    <label for="car-name">Car name: </label>
-    <input id="car-name" [(ngModel)]="car.name" placeholder="name">
+
+  <h2>{{car.brand | uppercase}} {{car.model}} Details</h2>
+
+  <div *ngIf="car" class="mx-auto" style="max-width: 50%;">
+    <div class="form-group">
+      <label for="inputBrand">Id: {{car.id}}</label>
+    </div>
+    <div class="form-group">
+      <label for="inputBrand">Brand</label>
+      <input type="text" class="form-control" id="inputBrand" [(ngModel)]="car.brand" placeholder="Enter brand">
+    </div>
+    <div class="form-group">
+      <label for="inputModel">Model</label>
+      <input type="text" class="form-control" id="inputModel" [(ngModel)]="car.model" placeholder="Enter Model">
+    </div>
+    <div class="form-group">
+      <label for="inputPower">Power</label>
+      <input type="number" class="form-control" id="inputPower" [(ngModel)]="car.power" placeholder="">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
+    <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
   </div>
-  
-  <button type="button" (click)="save()">save</button>
-  <button type="button" (click)="goBack()">go back</button>
-  
+
 </div>

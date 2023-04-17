@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Car } from './car';
-import { CARS } from './exampleCars';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -91,13 +90,13 @@ export class CarService {
     );
   }
 
-  /* GET cares whose name contains search term */
+  /* GET cares whose brand contains search term */
   searchCars(term: string): Observable<Car[]> {
     if (!term.trim()) {
       // if not search term, return empty car array.
       return of([]);
     }
-    return this.http.get<Car[]>(`${this.carsUrl}/?name=${term}`).pipe(
+    return this.http.get<Car[]>(`${this.carsUrl}/?brand=${term}`).pipe(
       tap(x => x.length ?
         this.log(`found cars matching "${term}"`) :
         this.log(`no cars matching "${term}"`)),
